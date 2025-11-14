@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin | Sitana</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>👩‍🏫 Admin Dashboard</h1>
+    <p class="subtitle">Manage students, balances, and waste data</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Total Waste Managed</h2>
+      <div class="waste-grid">
+        <div class="waste-item">
+          <p class="label">Organic</p>
+          <input type="number" id="totalOrganic" placeholder="Organic (kg)" />
+        </div>
+        <div class="waste-item">
+          <p class="label">Anorganic</p>
+          <input type="number" id="totalAnorganic" placeholder="Anorganic (kg)" />
+        </div>
+      </div>
+      <button onclick="updateWaste()">Update Waste Data</button>
+      <p class="muted" id="wasteMsg"></p>
+    </section>
+
+    <section class="card">
+      <h2>All Students</h2>
+      <table>
+        <thead>
+          <tr><th>NIS</th><th>Name</th><th>Balance (Rp)</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Transaction Logs</h2>
+      <table>
+        <thead>
+          <tr><th>NIS</th><th>Name</th><th>Date</th><th>Type</th><th>Detail</th><th>Amount</th></tr>
+        </thead>
+        <tbody id="adminTransactionTable"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <small><a href="index.html" class="link">⬅ Back to Public Dashboard</a></small>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    loadAdminDashboard();
+  </script>
+</body>
+</html>

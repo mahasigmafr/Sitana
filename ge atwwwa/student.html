@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student | Sitana</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>👩‍🎓 Student Dashboard</h1>
+    <p class="subtitle">Your balance, transactions, and waste contribution</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Profile</h2>
+      <p><strong>Name:</strong> <span id="studentName">-</span></p>
+      <p><strong>NIS:</strong> <span id="studentNIS">-</span></p>
+      <p><strong>Balance:</strong> Rp <span id="studentBalance">0</span></p>
+    </section>
+
+    <section class="card">
+      <h2>Your Waste Managed</h2>
+      <div class="waste-grid">
+        <div class="waste-item">
+          <p class="label">Organic</p>
+          <p class="value" id="studentOrganic">0 kg</p>
+        </div>
+        <div class="waste-item">
+          <p class="label">Anorganic</p>
+          <p class="value" id="studentAnorganic">0 kg</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Transaction History</h2>
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Type</th><th>Details</th><th>Amount (Rp)</th></tr>
+        </thead>
+        <tbody id="transactionTable"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Record Purchase</h2>
+      <input type="text" id="itemName" placeholder="Item name" />
+      <input type="number" id="itemPrice" placeholder="Price (Rp)" />
+      <button onclick="recordPurchase()">Add Purchase</button>
+      <p class="muted" id="message"></p>
+    </section>
+  </main>
+
+  <footer>
+    <small><a href="index.html" class="link">⬅ Back to Public Dashboard</a></small>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    loadStudentDashboard();
+  </script>
+</body>
+</html>
